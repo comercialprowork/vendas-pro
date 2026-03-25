@@ -525,7 +525,7 @@ document.getElementById('file-input').addEventListener('change',async e=>{
   const name=members[pendingIdx].name;
   setUploadProgress(true,`Enviando foto de ${name.split(' ')[0]}...`);
   // 300x300 px, JPEG 0.65 — boa qualidade, tamanho controlado (~20-35KB)
-  const dataUrl=await compressImage(file,300,300,0.65);
+  const dataUrl=await compressImage(file,80,80,0.4);
   members[pendingIdx].photo=dataUrl;
   await saveToSheets(`📷 Foto de ${name.split(' ')[0]} salva para todos!`);
   setUploadProgress(false);
